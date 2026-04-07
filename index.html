@@ -3,160 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Fórmula Primeira Fase Revalida | Sua aprovação começa aqui</title>
-  <!-- Fonte Manrope -->
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (gratuita) -->
+  <title>Fórmula Primeira Fase Revalida | Para médicos formados no exterior</title>
+  <!-- Fontes: Manrope + Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Manrope', sans-serif;
-      background: #ffffff;
-      overflow-x: hidden;
-    }
-    /* Animações personalizadas */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    .animate-float {
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes pulse-slow {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.9; transform: scale(1.02); }
-    }
-    .animate-pulse-slow {
-      animation: pulse-slow 2s ease-in-out infinite;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fadeInUp {
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
-    /* Gradiente personalizado para título */
-    .gradient-text {
-      background: linear-gradient(135deg, #d4af37, #f5e5a0, #d4af37);
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Manrope', 'Inter', sans-serif; background: #ffffff; overflow-x: hidden; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fadeInUp { animation: fadeInUp 0.6s ease-out forwards; }
+    .gradient-text { background: linear-gradient(135deg, #FFD700, #F5B041, #FFD700); background-clip: text; -webkit-background-clip: text; color: transparent; display: inline-block; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -15px rgba(0,0,0,0.2); }
+    .gradient-hero { background: linear-gradient(135deg, #00211d 0%, #00301c 50%, #001a15 100%); }
+    .shadow-gold { box-shadow: 0 15px 25px -10px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,215,0,0.3); }
+    .method-badge { background: #FFD700; color: #00211d; font-weight: 800; padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.9rem; }
+    @media (min-width: 768px) { .method-badge { font-size: 1rem; padding: 0.5rem 1.2rem; } }
+    .smaller-img { max-width: 85%; margin: 0 auto; }
+    @media (max-width: 768px) { .smaller-img { max-width: 100%; } }
+    html { scroll-behavior: smooth; }
+    .countdown-bar { background: linear-gradient(90deg, #00211d, #004d2e); border-bottom: 2px solid #FFD700; }
+    .big-number { font-size: 2.5rem; font-weight: 800; display: inline-block; margin-right: 4px; }
+    .small-text { font-size: 1rem; font-weight: normal; }
+    /* Preços em negrito com gradiente */
+    .price-bold {
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFD700, #ff0080, #00d9ff);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       display: inline-block;
     }
-    /* Efeitos hover cards */
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.2);
-    }
-    /* Barra de contagem regressiva */
-    .countdown-bar {
-      background: linear-gradient(90deg, #0d2b1e, #1a4a2a);
-      border-bottom: 2px solid #d4af37;
-    }
-    /* Gradiente do hero */
-    .gradient-hero {
-      background: linear-gradient(135deg, #0d3b2a 0%, #1b6b3c 50%, #0a3b1f 100%);
-    }
-    /* Estilo para o badge método comprovado */
-    .method-badge {
-      background: #d4af37;
-      color: #0a2e1f;
+    .price-large {
+      font-size: 3rem;
       font-weight: 800;
-      padding: 0.4rem 1rem;
-      border-radius: 2rem;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-    }
-    @media (min-width: 768px) {
-      .method-badge {
-        font-size: 1rem;
-        padding: 0.5rem 1.2rem;
-      }
-    }
-    /* Sombra dourada para imagens */
-    .shadow-gold {
-      box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.3);
-    }
-    /* Ajuste para imagem menor na seção "fórmula" */
-    .smaller-img {
-      max-width: 85%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @media (max-width: 768px) {
-      .smaller-img {
-        max-width: 100%;
-      }
-    }
-    /* Scroll suave */
-    html {
-      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
 
-<!-- BARRA DE CONTAGEM REGRESSIVA (inspirada no concorrente) -->
-<div class="countdown-bar text-white py-2 text-center text-sm md:text-base font-semibold fixed top-0 left-0 w-full z-50 shadow-lg">
+<!-- BARRA DE CONTAGEM (não fixa) -->
+<div class="countdown-bar text-white py-2 text-center text-sm md:text-base font-semibold relative z-30 shadow-md">
   <div class="container mx-auto px-4 flex items-center justify-center gap-3 flex-wrap">
     <i class="fas fa-calendar-alt text-yellow-400"></i>
-    <span>📢 Edital 2026/1 publicado • Prova em <strong id="countdown-days" class="text-yellow-300 text-lg mx-1">--</strong> dias</span>
+    <span>📢 Edital 2026/1 publicado • Prova em <strong id="countdown-days" class="text-yellow-300 text-2xl mx-1">--</strong> dias</span>
     <i class="fas fa-bolt text-yellow-400 animate-pulse"></i>
-    <a href="#planos" class="hidden sm:inline-block bg-yellow-500 text-[#0a2e1f] px-4 py-1 rounded-full text-xs font-bold hover:bg-yellow-400 transition">GARANTIR VAGA →</a>
+    <a href="#planos" class="hidden sm:inline-block bg-yellow-500 text-[#00211d] px-4 py-1 rounded-full text-xs font-bold hover:bg-yellow-400 transition">GARANTIR VAGA →</a>
   </div>
 </div>
 
-<!-- CABEÇALHO FIXO COM LOGOTIPO (imagem nova) -->
-<header class="sticky top-10 z-40 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-200">
-  <div class="w-full px-4 sm:px-6 lg:px-8 py-3">
+<!-- CABEÇALHO COM LOGO -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-200">
+  <div class="w-full px-4 sm:px-6 lg:px-8 py-2">
     <div class="flex justify-between items-center">
       <div class="flex items-center">
-        <img src="./Captura de tela de 2026-04-07 01-21-45.png" alt="Fórmula Revalida" class="h-12 md:h-14 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/200x60/15c659/white?text=Fórmula+Revalida'">
+        <img src="./Captura de tela de 2026-04-07 01-21-45.png" alt="Fórmula Revalida" class="h-10 md:h-12 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/160x50/15c659/white?text=Fórmula+Revalida'">
       </div>
       <div>
-        <a href="#planos" class="bg-gradient-to-r from-[#d4af37] to-[#b8921a] text-gray-900 px-5 py-2 rounded-xl font-bold hover:shadow-lg transition text-sm md:text-base shadow-md">Começar Agora</a>
+        <a href="#planos" class="bg-gradient-to-r from-[#FFD700] to-[#F5B041] text-gray-900 px-5 py-2 rounded-xl font-bold hover:shadow-lg transition text-sm md:text-base shadow-md">Começar Agora</a>
       </div>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="relative gradient-hero text-white overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24">
+<section class="relative gradient-hero text-white overflow-hidden pt-12 pb-16 md:pt-16 md:pb-20">
   <div class="absolute inset-0 bg-black/10"></div>
   <div class="relative w-full px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
       <div class="space-y-6 animate-fadeInUp">
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium">
-          <i class="fas fa-check-circle text-yellow-400 text-xs"></i>
-          <span>Método aprovado por médicos revalidados</span>
+          <i class="fas fa-globe-americas text-yellow-400 text-xs"></i>
+          <span>Exclusivo para médicos formados no exterior</span>
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
           FÓRMULA <span class="gradient-text">PRIMEIRA FASE</span> REVALIDA
         </h1>
-        <p class="text-lg md:text-xl text-green-100">A assinatura que transforma médicos formados no exterior em <strong class="text-white">médicos brasileiros</strong></p>
+        <p class="text-lg md:text-xl text-green-100">A assinatura que transforma médicos internacionais em <strong class="text-white">médicos brasileiros</strong> – com CRM, autonomia e respeito.</p>
         <div class="space-y-3">
           <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-400 text-lg"></i><span>Ter o CRM no bolso e atender como médico de verdade no Brasil</span></div>
           <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-400 text-lg"></i><span>Parar de explicar que você é formado no exterior</span></div>
           <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-400 text-lg"></i><span>Ganhar em reais o que você estudou anos para conquistar</span></div>
         </div>
         <div class="pt-4">
-          <a href="#planos" class="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-[#0a5c2e] font-bold text-lg px-8 py-4 rounded-xl transition transform hover:scale-105 shadow-xl">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
+          <a href="#planos" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FFD700] to-[#F5B041] text-[#00211d] font-bold text-lg px-8 py-4 rounded-xl transition transform hover:scale-105 shadow-xl">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
           <p class="text-sm text-green-200 mt-3">✅ 7 dias de garantia incondicional • ✅ Cancele quando quiser</p>
         </div>
       </div>
       <div class="relative hero-image animate-fadeInUp" style="animation-delay: 0.2s;">
         <img src="./Gemini_Generated_Image_nllrk0nllrk0nllr.png" alt="Médica brasileira" class="w-full rounded-2xl object-cover shadow-gold" loading="lazy">
-        <div class="absolute -bottom-5 -right-5 bg-gradient-to-r from-[#d4af37] to-[#b8921a] text-gray-900 px-4 py-2 rounded-xl font-bold shadow-lg text-center">
+        <div class="absolute -bottom-5 -right-5 bg-gradient-to-r from-[#FFD700] to-[#F5B041] text-[#00211d] px-4 py-2 rounded-xl font-bold shadow-lg text-center">
           <i class="fas fa-chalkboard-user text-sm mr-1"></i>
           <span class="text-sm md:text-base">Mentoria com quem entende de aprovação</span>
         </div>
@@ -175,10 +114,7 @@
     <div class="grid lg:grid-cols-2 gap-12 items-start">
       <div class="space-y-6">
         <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-red-500 card-hover">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center"><i class="fas fa-chart-line text-red-600 text-xl"></i></div>
-            <h3 class="text-xl font-bold">Estatísticas que importam</h3>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center"><i class="fas fa-chart-line text-red-600 text-xl"></i></div><h3 class="text-xl font-bold">Estatísticas que importam</h3></div>
           <div class="space-y-3">
             <div class="flex justify-between p-3 bg-red-50 rounded-lg"><span class="font-semibold">Aprovados na 1ª fase (2025/1)</span><span class="text-2xl font-bold text-red-600">28,23%</span></div>
             <div class="flex justify-between p-3 bg-red-50 rounded-lg"><span class="font-semibold">Reprovação geral (1ª ou 2ª etapa)</span><span class="text-2xl font-bold text-red-600">96%</span></div>
@@ -186,12 +122,13 @@
           </div>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
-          <h3 class="text-xl font-bold mb-4">O que mudou na prova</h3>
+          <h3 class="text-xl font-bold mb-4"><i class="fas fa-sync-alt text-green-600 mr-2"></i> O que o Revalida realmente testa (e como nosso método te prepara)</h3>
           <ul class="space-y-2">
-            <li class="flex gap-2"><i class="fas fa-check-circle text-green-600 mt-1"></i> Primeira fase: apenas prova objetiva (sem discursiva)</li>
-            <li class="flex gap-2"><i class="fas fa-check-circle text-green-600 mt-1"></i> 100 questões em apenas 5 horas</li>
-            <li class="flex gap-2"><i class="fas fa-check-circle text-green-600 mt-1"></i> Conteúdo extenso e questões clínicas complexas</li>
+            <li class="flex gap-2"><i class="fas fa-check-circle text-green-600 mt-1"></i> <strong>Prova objetiva 100%</strong> – sem discursivas, mas com pegadinhas clínicas</li>
+            <li class="flex gap-2"><i class="fas fa-check-circle text-green-600 mt-1"></i> <strong>100 questões em 5 horas</strong> – resistência e estratégia são treinadas nos simulados</li>
+            <li class="flex gap-2"><i class="fas fa-check-circle text-green-600 mt-1"></i> <strong>Raciocínio clínico integrado</strong> – você aprende a conectar diagnósticos e condutas com nosso banco de questões comentadas</li>
           </ul>
+          <p class="text-gray-600 text-sm mt-3 italic">Nosso foco não é só conteúdo – é dominar o estilo da prova e o tempo.</p>
         </div>
         <div class="bg-[#0a5c2e] text-white p-6 rounded-2xl">
           <h3 class="text-xl font-bold mb-2"><i class="fas fa-brain mr-2"></i> Seu maior inimigo não é o conteúdo</h3>
@@ -200,59 +137,59 @@
       </div>
       <div class="relative">
         <img src="./problem-stats-d62d5a487c23445d9a6c38c9d3e3bdf4.webp" alt="Estresse na prova" class="w-full rounded-2xl shadow-xl" loading="lazy">
-        <div class="absolute bottom-5 left-5 bg-black/60 text-white px-3 py-1 rounded-lg text-sm">Mais de 70% ficam pelo caminho</div>
+        <div class="absolute bottom-5 left-5 bg-black/70 text-white px-4 py-2 rounded-lg text-center">
+          <span class="big-number">70%</span><span class="small-text"> ficam pelo caminho</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FÓRMULA QUE FUNCIONA (com imagem menor e badge) -->
-<section class="py-16 bg-white">
+<!-- FÓRMULA QUE FUNCIONA -->
+<section class="py-12 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
+    <div class="text-center mb-8">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900">A <span class="text-green-600">fórmula</span> que <span class="text-green-600">funciona</span></h2>
       <p class="text-gray-600 max-w-2xl mx-auto">A única assinatura construída por médicos revalidados, com contato direto e estudo por questões.</p>
     </div>
-    <!-- Imagem da seção "fórmula" - menor -->
-    <div class="flex justify-center mb-10">
+    <div class="flex justify-center mb-8">
       <div class="relative smaller-img">
-        <img src="https://cdn.ailandingpage.ai/landingpage_io/user-generate/dc5f80d6-5e1b-4e2d-bfc4-ee421b6f4e39/dc5f80d6-5e1b-4e2d-bfc4-ee421b6f4e39/solution/solution-method-7da5aa04435b42f793d8662fa4f123d3.png" alt="Médicos revalidados ensinando" class="w-full rounded-2xl shadow-xl">
+        <img src="https://cdn.ailandingpage.ai/landingpage_io/user-generate/dc5f80d6-5e1b-4e2d-bfc4-ee421b6f4e39/dc5f80d6-5e1b-4e2d-bfc4-ee421b6f4e39/solution/solution-method-7da5aa04435b42f793d8662fa4f123d3.png" alt="Médicos revalidados" class="w-full rounded-2xl shadow-xl">
         <div class="absolute top-4 left-4 method-badge shadow-md"><i class="fas fa-star mr-1"></i> MÉTODO COMPROVADO</div>
       </div>
     </div>
-    <div class="grid lg:grid-cols-2 gap-10 items-center mt-8">
+    <div class="grid lg:grid-cols-2 gap-10 items-center mt-6">
       <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-600 card-hover">
         <h3 class="text-2xl font-bold mb-4"><i class="fas fa-gem text-green-600 mr-2"></i> Por que somos diferentes?</h3>
         <div class="space-y-4">
           <div class="flex gap-3"><i class="fas fa-user-md text-green-600 text-xl mt-1"></i><div><strong class="text-lg">Professores médicos revalidados</strong><p class="text-gray-600">Quem ensina já passou pelo mesmo caminho que você</p></div></div>
-          <div class="flex gap-3"><i class="fab fa-whatsapp text-green-600 text-xl mt-1"></i><div><strong class="text-lg">Contato direto via WhatsApp</strong><p class="text-gray-600">Professor no seu bolso para tirar dúvidas sempre</p></div></div>
-          <div class="flex gap-3"><i class="fas fa-video text-green-600 text-xl mt-1"></i><div><strong class="text-lg">3 lives ao vivo por semana</strong><p class="text-gray-600">Terça, quinta e sábado com resolução de questões ao vivo</p></div></div>
+          <div class="flex gap-3"><i class="fab fa-whatsapp text-green-600 text-xl mt-1"></i><div><strong class="text-lg">Contato direto via WhatsApp e Telegram</strong><p class="text-gray-600">Grupo exclusivo com os professores e colegas – tire dúvidas 24/7</p></div></div>
+          <div class="flex gap-3"><i class="fas fa-video text-green-600 text-xl mt-1"></i><div><strong class="text-lg">3 lives ao vivo por semana</strong><p class="text-gray-600">Terça, quinta e sábado – resolução de questões ao vivo</p></div></div>
         </div>
       </div>
       <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-600 card-hover">
         <h3 class="text-2xl font-bold mb-3"><i class="fas fa-bolt text-green-600 mr-2"></i> Método direto e eficiente</h3>
         <p class="text-gray-700">Esqueça teoria solta. Nossa abordagem é <strong>estudo por questões</strong> com trilha organizada que exige apenas <strong>2 horas por dia</strong>.</p>
         <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-          <div class="bg-white/60 rounded-xl p-3"><i class="fas fa-book-open text-2xl text-green-600"></i><div class="font-bold text-lg mt-1">Material<br>de apoio</div></div>
-          <div class="bg-white/60 rounded-xl p-3"><i class="fas fa-clock text-2xl text-green-600"></i><div class="font-bold text-lg mt-1">6h/sem<br>aula</div></div>
-          <div class="bg-white/60 rounded-xl p-3"><i class="fas fa-headset text-2xl text-green-600"></i><div class="font-bold text-lg mt-1">Suporte<br>24/7</div></div>
+          <div class="bg-white/60 rounded-xl p-3"><i class="fas fa-book-open text-2xl text-green-600"></i><div class="font-bold text-lg mt-1">Material de apoio</div></div>
+          <div class="bg-white/60 rounded-xl p-3"><i class="fas fa-clock text-2xl text-green-600"></i><div class="font-bold text-lg mt-1">6h/sem aula</div></div>
+          <div class="bg-white/60 rounded-xl p-3"><i class="fas fa-headset text-2xl text-green-600"></i><div class="font-bold text-lg mt-1">Suporte 24/7</div></div>
         </div>
       </div>
     </div>
-    <!-- Gradiente do método transformador -->
-    <div class="mt-12 bg-gradient-to-r from-green-700 to-green-900 rounded-2xl p-8 text-white text-center shadow-xl">
+    <div class="mt-10 bg-gradient-to-r from-green-800 to-green-950 rounded-2xl p-8 text-white text-center shadow-xl">
       <h3 class="text-2xl md:text-3xl font-bold mb-4">O método que transforma médicos estrangeiros em brasileiros</h3>
       <p class="text-lg text-green-100 max-w-2xl mx-auto mb-6">Não é mais um cursinho. É a ponte definitiva entre você e sua carreira médica no Brasil.</p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fas fa-check-circle text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">1000+</div><div>Questões comentadas</div></div>
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fas fa-chalkboard-user text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">6h/sem</div><div>Aulas ao vivo</div></div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fab fa-whatsapp text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">24/7</div><div>Suporte WhatsApp</div></div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fab fa-whatsapp text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">24/7</div><div>Grupos WhatsApp + Telegram</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- O QUE VOCÊ RECEBE (benefícios) -->
+<!-- BENEFÍCIOS -->
 <section class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
@@ -260,12 +197,12 @@
       <p class="text-gray-600">Tudo que você precisa para passar na primeira fase</p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-chalkboard-user text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">Aulas com médicos revalidados</h3><p class="text-gray-600">Aulas ao vivo e gravadas por quem já passou</p></div>
-      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fab fa-whatsapp text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">Contato direto WhatsApp</h3><p class="text-gray-600">Professor no seu celular</p></div>
-      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-video text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">3 lives por semana</h3><p class="text-gray-600">Terça, quinta e sábado</p></div>
-      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-file-alt text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">Provas INEP comentadas</h3><p class="text-gray-600">Todas as edições anteriores</p></div>
-      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-database text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">+1.000 questões de residência</h3><p class="text-gray-600">Banco extra para treinar</p></div>
-      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-chart-simple text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">Simulados idênticos</h3><p class="text-gray-600">100 questões, correção detalhada</p></div>
+      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-chalkboard-user text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">Aulas com médicos revalidados</h3><p class="text-gray-600">Ao vivo e gravadas – você assiste quando quiser</p></div>
+      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fab fa-whatsapp text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">Grupos WhatsApp + Telegram</h3><p class="text-gray-600">Comunidade ativa com monitores e colegas – suporte em tempo real</p></div>
+      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-video text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">3 lives por semana</h3><p class="text-gray-600">Terça, quinta e sábado – revisão ao vivo</p></div>
+      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-file-alt text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">Provas INEP comentadas</h3><p class="text-gray-600">Edições anteriores – com resolução detalhada</p></div>
+      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-database text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">+1.000 questões de residência</h3><p class="text-gray-600">Banco extra para treinar raciocínio clínico</p></div>
+      <div class="bg-white rounded-2xl p-6 text-center card-hover shadow-md"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"><i class="fas fa-chart-simple text-green-600 text-2xl"></i></div><h3 class="text-xl font-bold mb-2">Simulados idênticos</h3><p class="text-gray-600">100 questões, correção detalhada e ranking</p></div>
     </div>
   </div>
 </section>
@@ -293,50 +230,64 @@
   </div>
 </section>
 
-<!-- PLANOS (com opção 3x) -->
-<section id="planos" class="py-16 bg-gray-50">
+<!-- OBJEÇÕES RESOLVIDAS (tabela) -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">Suas objeções resolvidas</h2>
+    <div class="bg-white rounded-2xl overflow-hidden shadow-md">
+      <div class="border-b border-gray-200 p-4 flex flex-col md:flex-row md:justify-between"><span class="font-bold text-gray-800">❌ "Não tenho tempo, trabalho muito."</span><span class="text-green-600">✅ Trilha de 2 horas por dia. Só o essencial.</span></div>
+      <div class="border-b border-gray-200 p-4 flex flex-col md:flex-row md:justify-between"><span class="font-bold text-gray-800">❌ "Já tentei outros cursinhos e não passei."</span><span class="text-green-600">✅ Contato direto com professor no WhatsApp. Dúvida não fica sem resposta.</span></div>
+      <div class="border-b border-gray-200 p-4 flex flex-col md:flex-row md:justify-between"><span class="font-bold text-gray-800">❌ "Vai dar trabalho planejar."</span><span class="text-green-600">✅ Trilha pronta. Você só segue.</span></div>
+      <div class="p-4 flex flex-col md:flex-row md:justify-between"><span class="font-bold text-gray-800">❌ "E se não funcionar para mim?"</span><span class="text-green-600">✅ 7 dias para testar sem risco. Devolvemos 100%.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS (Invista na sua aprovação) -->
+<section id="planos" class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Planos de assinatura</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Invista na sua <span class="gradient-text">aprovação</span></h2>
     <p class="text-gray-600 mb-10">Sem fidelidade. Cancele quando quiser. Parcelamento em até 3x sem juros.</p>
     <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
       <!-- Mensal -->
-      <div class="bg-white rounded-2xl p-6 shadow-xl flex flex-col card-hover">
+      <div class="bg-white rounded-2xl p-6 shadow-xl flex flex-col card-hover border border-gray-200">
         <h3 class="text-2xl font-bold">Mensal</h3>
-        <div class="text-4xl font-bold my-4">R$ 197<small class="text-base font-normal">/mês</small></div>
-        <a href="#" class="bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition mb-5 shadow-md">Assinar agora</a>
+        <div class="my-4"><span class="price-large price-bold">R$ 197</span><span class="text-gray-500">/mês</span></div>
+        <a href="#" class="bg-gradient-to-r from-[#FFD700] to-[#F5B041] text-[#00211d] py-3 rounded-xl font-bold hover:shadow-lg transition mb-5 shadow-md">Assinar agora</a>
         <ul class="text-left text-gray-700 space-y-2 text-sm border-t pt-4">
           <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Aulas ao vivo toda semana</li>
           <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Aulas gravadas liberadas</li>
-          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Grupo exclusivo WhatsApp</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Grupo exclusivo WhatsApp + Telegram</li>
           <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Material de acompanhamento</li>
         </ul>
       </div>
-      <!-- Trimestral (mais escolhido) -->
+      <!-- Trimestral -->
       <div class="bg-white rounded-2xl p-6 shadow-xl border-2 border-yellow-500 relative flex flex-col card-hover transform md:-translate-y-2">
         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">MAIS ESCOLHIDO</div>
         <h3 class="text-2xl font-bold mt-4">Trimestral</h3>
-        <div class="text-4xl font-bold my-4">R$ 497</div>
+        <div class="my-4"><span class="price-large price-bold">R$ 497</span></div>
         <p class="text-green-600 text-sm -mt-2 mb-2">Economia de R$ 94</p>
         <p class="text-sm text-gray-500 mb-2">ou <strong>3x de R$ 165,67</strong> sem juros</p>
-        <a href="#" class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 py-3 rounded-xl font-bold hover:shadow-lg transition mb-5">Assinar agora</a>
+        <a href="#" class="bg-gradient-to-r from-[#ff0080] to-[#00d9ff] text-white py-3 rounded-xl font-bold hover:shadow-lg transition mb-5 shadow-md">Assinar agora</a>
         <ul class="text-left text-gray-700 space-y-2 text-sm border-t pt-4">
-          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tudo do plano mensal +</li>
-          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Aulas teóricas completas</li>
-          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Roteiros e checklists</li>
-          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Simulados extras</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Aulas ao vivo toda semana</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Aulas gravadas liberadas</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Grupo exclusivo WhatsApp + Telegram</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Material de acompanhamento</li>
         </ul>
       </div>
       <!-- Semestral -->
-      <div class="bg-white rounded-2xl p-6 shadow-xl flex flex-col card-hover">
+      <div class="bg-white rounded-2xl p-6 shadow-xl flex flex-col card-hover border border-gray-200">
         <h3 class="text-2xl font-bold">Semestral</h3>
-        <div class="text-4xl font-bold my-4">R$ 897</div>
+        <div class="my-4"><span class="price-large price-bold">R$ 897</span></div>
         <p class="text-green-600 text-sm -mt-2 mb-2">Economia de R$ 285</p>
         <p class="text-sm text-gray-500 mb-2">ou <strong>3x de R$ 299</strong> sem juros</p>
-        <a href="#" class="bg-green-600 text-white py-3 rounded-xl font-bold hover:bg-green-700 transition mb-5">Assinar agora</a>
+        <a href="#" class="bg-gradient-to-r from-[#00d9ff] to-[#ff0080] text-white py-3 rounded-xl font-bold hover:shadow-lg transition mb-5 shadow-md">Assinar agora</a>
         <ul class="text-left text-gray-700 space-y-2 text-sm border-t pt-4">
-          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Tudo do plano trimestral +</li>
-          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Acesso até a prova</li>
-          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Material premium</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Aulas ao vivo toda semana</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Aulas gravadas liberadas</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Grupo exclusivo WhatsApp + Telegram</li>
+          <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Material de acompanhamento</li>
         </ul>
       </div>
     </div>
@@ -344,7 +295,7 @@
 </section>
 
 <!-- GARANTIA + URGÊNCIA -->
-<section class="py-16 bg-white">
+<section class="py-16 bg-gray-50">
   <div class="max-w-4xl mx-auto px-4 text-center">
     <div class="bg-green-50 rounded-2xl p-8 shadow-md">
       <i class="fas fa-shield-alt text-4xl text-green-700 mb-3"></i>
@@ -361,8 +312,22 @@
       <p class="mt-4 font-semibold"><i class="fas fa-calendar-alt mr-2"></i> A prova de 2026/1 está marcada para <strong>7 de junho</strong>. As inscrições vão de 6 a 10 de abril.</p>
     </div>
     <div class="mt-10">
-      <a href="#" class="inline-flex items-center gap-2 bg-green-700 text-white text-xl px-8 py-4 rounded-xl font-bold hover:bg-green-800 transition shadow-xl">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
+      <a href="#" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FFD700] to-[#F5B041] text-[#00211d] text-xl px-8 py-4 rounded-xl font-bold hover:shadow-xl transition shadow-md">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
       <p class="mt-4 text-gray-600"><i class="fas fa-check-circle text-green-600 mr-1"></i> Acesso imediato. Hoje você já assiste à primeira aula.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (Dúvidas Frequentes) -->
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">Dúvidas frequentes</h2>
+    <div class="space-y-4">
+      <details class="bg-gray-50 rounded-xl p-5 border border-gray-200"><summary class="font-bold text-gray-800 cursor-pointer">Como funciona o acesso? Quando começo?</summary><p class="text-gray-600 mt-2">O acesso é imediato após a confirmação do pagamento. Você recebe login e senha por e-mail e já pode assistir às aulas gravadas, participar do grupo e aguardar as próximas lives.</p></details>
+      <details class="bg-gray-50 rounded-xl p-5 border border-gray-200"><summary class="font-bold text-gray-800 cursor-pointer">Por quanto tempo tenho acesso?</summary><p class="text-gray-600 mt-2">Enquanto sua assinatura estiver ativa. Você pode cancelar quando quiser, sem multa.</p></details>
+      <details class="bg-gray-50 rounded-xl p-5 border border-gray-200"><summary class="font-bold text-gray-800 cursor-pointer">O curso é mesmo para médicos formados no exterior?</summary><p class="text-gray-600 mt-2">Sim! Todo o conteúdo e metodologia foram pensados para quem estudou fora do Brasil e precisa se adaptar ao padrão do Revalida.</p></details>
+      <details class="bg-gray-50 rounded-xl p-5 border border-gray-200"><summary class="font-bold text-gray-800 cursor-pointer">Terei contato com os professores?</summary><p class="text-gray-600 mt-2">Sim, todos os alunos têm acesso direto aos professores via WhatsApp e Telegram. As lives também são interativas.</p></details>
+      <details class="bg-gray-50 rounded-xl p-5 border border-gray-200"><summary class="font-bold text-gray-800 cursor-pointer">E se eu não gostar? Posso cancelar?</summary><p class="text-gray-600 mt-2">Sim. Você tem 7 dias de garantia incondicional. Se não se adaptar, devolvemos 100% do seu investimento.</p></details>
     </div>
   </div>
 </section>
@@ -370,6 +335,7 @@
 <!-- RODAPÉ -->
 <footer class="bg-[#0a2e1f] text-white text-center py-8 text-sm">
   <p>Fórmula Primeira Fase Revalida – Assinatura mensal. Cancele quando quiser. 7 dias de garantia incondicional.</p>
+  <p class="mt-2 text-gray-400 text-xs">© 2026 • Desenvolvido para médicos formados no exterior que buscam a aprovação no Revalida.</p>
 </footer>
 
 <script>
