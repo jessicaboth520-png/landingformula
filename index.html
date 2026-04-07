@@ -40,7 +40,7 @@
       border-radius: 3px;
     }
     
-    /* Versão para "aprovação" sem linha (usada apenas no título dos planos) */
+    /* Versão para "aprovação" sem linha */
     .highlight-text-no-line {
       background: linear-gradient(135deg, #00D9FF, #FF0080);
       background-clip: text;
@@ -159,40 +159,71 @@
       box-shadow: 0 20px 25px -12px rgba(0,0,0,0.5);
     }
     
-    /* Ajustes mobile */
+    /* Ajustes mobile (TODOS OS NOVOS TAMANHOS) */
     @media (max-width: 767px) {
       .countdown-text { font-size: 0.75rem !important; }
       .hero-title { font-size: 1.775rem !important; line-height: 1.3 !important; }
-      .hero-description { font-size: 1rem !important; line-height: 1.4 !important; }
-      .badge-exclusive { font-size: 0.7rem !important; }
-      .section-title-mobile { font-size: 1.6rem !important; }
-      .reality-title { font-size: 1.3rem !important; }
-      .formula-title { font-size: 1.6rem !important; }
       
+      /* 1. Frase hero: 14px */
+      .hero-description { font-size: 14px !important; line-height: 1.4 !important; }
+      
+      /* 2. Lista de 3 itens: 13px */
+      .hero-list-item { font-size: 13px !important; }
+      
+      /* 3. Itens do Revalida realmente testa: textos pequenos 12px, títulos 15px */
+      .testa-text-small { font-size: 12px !important; }
+      .testa-title { font-size: 15px !important; }
+      
+      /* 4. "Por que somos diferentes?" textos descritivos: diminuir 1px (13px) */
+      .diff-desc-text { font-size: 13px !important; }
+      
+      /* 5. Bônus exclusivos: tudo diminui 1px */
+      .bonus-title { font-size: 1.75rem !important; } /* subtítulo */
+      .bonus-sub { font-size: 0.8rem !important; }
+      .bonus-card-title { font-size: 1.3rem !important; }
+      .bonus-card-text { font-size: 0.75rem !important; }
+      .bonus-price { font-size: 0.9rem !important; }
+      
+      /* 6. Título "A realidade que você enfrenta hoje": 26px */
+      .reality-title { font-size: 26px !important; }
+      
+      /* 7. Labels das estatísticas: diminuir 1px (14px) */
+      .stats-label-mobile { font-size: 14px !important; }
+      /* Percentuais já estão 20px, manter */
+      
+      /* 8. Seção "O método que transforma..." tudo -1px */
+      .method-main-title { font-size: 1.5rem !important; }
+      .method-subtitle { font-size: 0.85rem !important; }
+      .method-card-number { font-size: 1.6rem !important; }
+      .method-card-label { font-size: 0.75rem !important; }
+      
+      /* 9. "Apenas para as primeiras 100 assinaturas" -2px */
+      .bonus-exclusive-text { font-size: 0.75rem !important; }
+      
+      /* 10. "Não é mais um cursinho. É a ponte definitiva." -2px */
+      .method-bridge-text { font-size: 0.85rem !important; }
+      
+      /* 11. "Explore os módulos da plataforma" -2px */
+      .carousel-subtitle { font-size: 0.8rem !important; }
+      
+      /* 12. "Tudo para passar na primeira fase" -2px */
+      .benefits-subtitle { font-size: 0.8rem !important; }
+      
+      /* Ajustes adicionais para manter coerência */
+      .badge-exclusive { font-size: 0.7rem !important; }
+      .formula-title { font-size: 1.6rem !important; }
       .stats-heading-mobile { font-size: 18px !important; }
-      .stats-label-mobile { font-size: 15px !important; }
       .stats-percent-mobile { font-size: 20px !important; }
       .enemy-heading-mobile { font-size: 17px !important; }
       .enemy-text-mobile { font-size: 12px !important; }
       .diff-heading-mobile { font-size: 20px !important; }
       .bonus-total-mobile { font-size: 16px !important; }
-      
-      /* Novo: diminuir 1px na frase do método */
-      .method-text-mobile { font-size: 13px !important; } /* padrão era 14px? Vamos forçar 13px */
-      
-      /* Diminuir 2px nos itens do grid (Material de apoio etc) */
+      .method-text-mobile { font-size: 13px !important; }
       .method-icons-mobile { font-size: 12px !important; }
-      .method-icons-mobile .text-2xl { font-size: 1.25rem !important; }
-      
-      /* Título e subtítulo dos planos - diminuir 1px */
-      .plans-title-mobile { font-size: 1.875rem !important; } /* padrão era 3xl (1.875rem) -> manter? Na verdade 3xl é 30px, vamos reduzir 1px? Melhor: */
-      .plans-subtitle-mobile { font-size: 0.875rem !important; } /* padrão era text-gray-400 sem tamanho específico, vamos definir */
-      
-      /* Texto da garantia diminuir 2px */
+      .plans-title-mobile { font-size: 1.875rem !important; }
+      .plans-subtitle-mobile { font-size: 0.875rem !important; }
       .guarantee-text-mobile { font-size: 0.75rem !important; }
       .guarantee-badges-mobile { font-size: 0.65rem !important; }
-      
-      /* FAQ - diminuir 3px nos textos das perguntas e respostas */
       .faq-summary-mobile { font-size: 0.9rem !important; }
       .faq-content-mobile { font-size: 0.8rem !important; }
     }
@@ -231,9 +262,9 @@
         <h1 class="font-extrabold leading-tight hero-title text-3xl md:text-5xl lg:text-6xl">FÓRMULA <span class="highlight-text">PRIMEIRA FASE</span> REVALIDA</h1>
         <p class="text-gray-300 hero-description text-base md:text-lg">A assinatura que transforma médicos internacionais em <strong class="text-white">médicos brasileiros</strong> – com CRM, autonomia e respeito.</p>
         <div class="space-y-2">
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-[#22d3ee] text-base"></i><span class="text-sm md:text-base">Ter o CRM no bolso e atender como médico de verdade no Brasil</span></div>
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-[#22d3ee] text-base"></i><span class="text-sm md:text-base">Acabar com a insegurança de ser formado fora e ser tratado como igual</span></div>
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-[#22d3ee] text-base"></i><span class="text-sm md:text-base">Ganhar em reais o que você estudou anos para conquistar</span></div>
+          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-[#22d3ee] text-base"></i><span class="hero-list-item text-sm md:text-base">Ter o CRM no bolso e atender como médico de verdade no Brasil</span></div>
+          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-[#22d3ee] text-base"></i><span class="hero-list-item text-sm md:text-base">Acabar com a insegurança de ser formado fora e ser tratado como igual</span></div>
+          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-[#22d3ee] text-base"></i><span class="hero-list-item text-sm md:text-base">Ganhar em reais o que você estudou anos para conquistar</span></div>
         </div>
         <div class="pt-2">
           <a href="#planos" class="inline-flex items-center gap-2 btn-primary text-white font-bold text-base md:text-lg px-6 py-3 rounded-xl transition transform hover:scale-105 shadow-xl" id="btn-comecar">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
@@ -246,7 +277,6 @@
       </div>
       <div class="relative animate-fadeInUp" style="animation-delay: 0.2s;">
         <div class="hero-image-wrapper">
-          <!-- IMAGEM TROCADA -->
           <img src="https://jessicaboth520-png.github.io/landingformula/Gemini_Generated_Image_ay88h5ay88h5ay88.png" alt="Médica brasileira" class="w-full rounded-2xl object-cover shadow-2xl" loading="lazy">
           <div class="hero-overlay"></div>
           <div class="hero-badge-shadow">
@@ -270,7 +300,6 @@
         <div class="bg-[#131A22] p-6 rounded-2xl border-l-4 border-red-500 stats-card-red">
           <div class="flex items-center gap-4 mb-4"><div class="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center"><i class="fas fa-chart-line text-red-500 text-lg"></i></div><h3 class="text-xl font-bold stats-heading-mobile">Estatísticas que importam</h3></div>
           <div class="space-y-3">
-            <!-- Cada linha com texto à esquerda e número à direita, mas centralizado no card? Vamos usar flex justify-between items-center -->
             <div class="flex justify-between items-center p-3 bg-red-500/10 rounded-lg"><span class="font-semibold stats-label-mobile">Aprovados na 1ª fase (2025/1)</span><span class="text-2xl font-bold text-red-500 stats-percent-mobile">28,23%</span></div>
             <div class="flex justify-between items-center p-3 bg-red-500/10 rounded-lg"><span class="font-semibold stats-label-mobile">Reprovação geral (1ª ou 2ª etapa)</span><span class="text-2xl font-bold text-red-500 stats-percent-mobile">96%</span></div>
             <div class="flex justify-between items-center p-3 bg-red-500/10 rounded-lg"><span class="font-semibold stats-label-mobile">Aprovação na primeira tentativa</span><span class="text-2xl font-bold text-red-500 stats-percent-mobile">36%</span></div>
@@ -279,9 +308,9 @@
         <div class="bg-[#131A22] p-6 rounded-2xl border-l-4 border-[#22d3ee] stats-card-cyan">
           <h3 class="text-xl font-bold mb-4 flex items-center gap-2 stats-heading-mobile"><i class="fas fa-sync-alt text-[#22d3ee]"></i> O que o Revalida realmente testa</h3>
           <div class="space-y-3">
-            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#00D9FF] mt-1"></i><div><strong class="text-white">Prova objetiva 100%</strong><p class="text-gray-400 text-sm">Sem discursivas, mas com pegadinhas clínicas que exigem atenção.</p></div></div>
-            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#FF0080] mt-1"></i><div><strong class="text-white">100 questões em 5 horas</strong><p class="text-gray-400 text-sm">Resistência e estratégia são treinadas nos simulados.</p></div></div>
-            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#0fa84a] mt-1"></i><div><strong class="text-white">Raciocínio clínico integrado</strong><p class="text-gray-400 text-sm">Conecte diagnósticos e condutas com nosso banco de questões.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#00D9FF] mt-1"></i><div><strong class="testa-title text-white">Prova objetiva 100%</strong><p class="text-gray-400 testa-text-small text-sm">Sem discursivas, mas com pegadinhas clínicas que exigem atenção.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#FF0080] mt-1"></i><div><strong class="testa-title text-white">100 questões em 5 horas</strong><p class="text-gray-400 testa-text-small text-sm">Resistência e estratégia são treinadas nos simulados.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#0fa84a] mt-1"></i><div><strong class="testa-title text-white">Raciocínio clínico integrado</strong><p class="text-gray-400 testa-text-small text-sm">Conecte diagnósticos e condutas com nosso banco de questões.</p></div></div>
           </div>
         </div>
         <div class="bg-gradient-to-r from-[#22d3ee]/20 to-[#00D9FF]/20 p-5 rounded-2xl border border-[#22d3ee]/30">
@@ -316,9 +345,9 @@
       <div class="bg-[#131A22] p-6 rounded-2xl border-l-4 border-[#0fa84a] card-hover text-left">
         <h3 class="text-2xl font-bold mb-4 diff-heading-mobile"><i class="fas fa-gem text-[#0fa84a] mr-2"></i> Por que somos diferentes?</h3>
         <div class="space-y-4">
-          <div class="flex gap-3"><i class="fas fa-user-md text-[#00D9FF] text-xl mt-1"></i><div><strong>Professores médicos revalidados</strong><p class="text-gray-400 text-sm">Quem ensina já passou pelo mesmo caminho</p></div></div>
-          <div class="flex gap-3"><i class="fab fa-whatsapp text-[#0fa84a] text-xl mt-1"></i><div><strong>Contato direto via WhatsApp e Telegram</strong><p class="text-gray-400 text-sm">Grupo exclusivo – tire dúvidas 24/7</p></div></div>
-          <div class="flex gap-3"><i class="fas fa-video text-[#FF0080] text-xl mt-1"></i><div><strong>3 lives ao vivo por semana</strong><p class="text-gray-400 text-sm">Terça, quinta e sábado – resolução ao vivo</p></div></div>
+          <div class="flex gap-3"><i class="fas fa-user-md text-[#00D9FF] text-xl mt-1"></i><div><strong>Professores médicos revalidados</strong><p class="text-gray-400 diff-desc-text text-sm">Quem ensina já passou pelo mesmo caminho</p></div></div>
+          <div class="flex gap-3"><i class="fab fa-whatsapp text-[#0fa84a] text-xl mt-1"></i><div><strong>Contato direto via WhatsApp e Telegram</strong><p class="text-gray-400 diff-desc-text text-sm">Grupo exclusivo – tire dúvidas 24/7</p></div></div>
+          <div class="flex gap-3"><i class="fas fa-video text-[#FF0080] text-xl mt-1"></i><div><strong>3 lives ao vivo por semana</strong><p class="text-gray-400 diff-desc-text text-sm">Terça, quinta e sábado – resolução ao vivo</p></div></div>
         </div>
       </div>
       <div class="bg-[#131A22] p-6 rounded-2xl border-l-4 border-[#0fa84a] card-hover text-left">
@@ -332,12 +361,12 @@
       </div>
     </div>
     <div class="bg-gradient-to-r from-[#0fa84a]/20 to-[#00b4d8]/20 rounded-2xl p-8 border border-[#0fa84a]/30">
-      <h3 class="text-2xl md:text-3xl font-bold mb-4">O método que transforma médicos estrangeiros em brasileiros</h3>
-      <p class="text-gray-300 max-w-2xl mx-auto mb-6">Não é mais um cursinho. É a ponte definitiva.</p>
+      <h3 class="method-main-title text-2xl md:text-3xl font-bold mb-4">O método que transforma médicos estrangeiros em brasileiros</h3>
+      <p class="text-gray-300 method-bridge-text max-w-2xl mx-auto mb-6">Não é mais um cursinho. É a ponte definitiva.</p>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-black/30 rounded-xl p-4"><i class="fas fa-check-circle text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">1000+</div><div>Questões comentadas</div></div>
-        <div class="bg-black/30 rounded-xl p-4"><i class="fas fa-chalkboard-user text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">6h/sem</div><div>Aulas ao vivo</div></div>
-        <div class="bg-black/30 rounded-xl p-4"><i class="fab fa-whatsapp text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">24/7</div><div>Grupos WhatsApp + Telegram</div></div>
+        <div class="bg-black/30 rounded-xl p-4"><i class="fas fa-check-circle text-yellow-400 text-3xl mb-2"></i><div class="method-card-number font-bold text-2xl">1000+</div><div class="method-card-label">Questões comentadas</div></div>
+        <div class="bg-black/30 rounded-xl p-4"><i class="fas fa-chalkboard-user text-yellow-400 text-3xl mb-2"></i><div class="method-card-number font-bold text-2xl">6h/sem</div><div class="method-card-label">Aulas ao vivo</div></div>
+        <div class="bg-black/30 rounded-xl p-4"><i class="fab fa-whatsapp text-yellow-400 text-3xl mb-2"></i><div class="method-card-number font-bold text-2xl">24/7</div><div class="method-card-label">Grupos WhatsApp + Telegram</div></div>
       </div>
     </div>
   </div>
@@ -348,7 +377,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-8">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">COMECE AQUI</h2>
-      <p class="text-gray-400">Explore os módulos da plataforma</p>
+      <p class="text-gray-400 carousel-subtitle">Explore os módulos da plataforma</p>
     </div>
     <div class="carousel-container relative pb-4">
       <div class="carousel-track flex gap-4 overflow-x-auto w-full pb-4 no-scrollbar cursor-grab active:cursor-grabbing scroll-smooth">
@@ -383,7 +412,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-10">
       <h2 class="text-3xl md:text-4xl font-bold text-white">O que você recebe ao assinar</h2>
-      <p class="text-gray-400">Tudo para passar na primeira fase</p>
+      <p class="text-gray-400 benefits-subtitle">Tudo para passar na primeira fase</p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="bg-[#131A22] rounded-2xl p-6 text-center card-hover border border-gray-800"><div class="icon-bg mx-auto animate-float" style="background-color: rgba(0, 217, 255, 0.15);"><i class="fas fa-chalkboard-user text-2xl text-[#00D9FF]"></i></div><h3 class="text-lg font-bold mb-2">Aulas com médicos revalidados</h3><p class="text-gray-400 text-sm">Aulas ao vivo e gravadas – você assiste quando quiser.</p></div>
@@ -399,17 +428,17 @@
 <!-- BÔNUS -->
 <section class="py-12 md:py-20 bg-[#0D1117] scroll-reveal">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><i class="fas fa-gift text-[#FF0080] mr-2"></i> Bônus exclusivos</h2>
-    <p class="text-gray-400 mb-8">Apenas para as primeiras 100 assinaturas</p>
+    <h2 class="bonus-title text-3xl md:text-4xl font-bold text-white mb-2"><i class="fas fa-gift text-[#FF0080] mr-2"></i> Bônus exclusivos</h2>
+    <p class="bonus-exclusive-text text-gray-400 mb-8">Apenas para as primeiras 100 assinaturas</p>
     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      <div class="bg-[#131A22] rounded-2xl p-6 shadow-xl border-t-4 border-yellow-500 card-hover"><i class="fas fa-fire text-4xl text-yellow-500 mb-3"></i><h3 class="text-2xl font-bold mb-2">Revisão Turbo</h3><p class="text-gray-400 mb-3">Duas lives extras por mês.</p><div><s class="text-gray-500">R$ 297</s> <strong class="text-green-400 text-xl ml-2">GRÁTIS</strong></div></div>
-      <div class="bg-[#131A22] rounded-2xl p-6 shadow-xl border-t-4 border-yellow-500 card-hover"><i class="fas fa-bullseye text-4xl text-yellow-500 mb-3"></i><h3 class="text-2xl font-bold mb-2">Técnicas de Prova</h3><p class="text-gray-400 mb-3">Duas aulas para identificar pegadinhas.</p><div><s class="text-gray-500">R$ 197</s> <strong class="text-green-400 text-xl ml-2">GRÁTIS</strong></div></div>
+      <div class="bg-[#131A22] rounded-2xl p-6 shadow-xl border-t-4 border-yellow-500 card-hover"><i class="fas fa-fire text-4xl text-yellow-500 mb-3"></i><h3 class="bonus-card-title text-2xl font-bold mb-2">Revisão Turbo</h3><p class="bonus-card-text text-gray-400 mb-3">Duas lives extras por mês.</p><div class="bonus-price"><s class="text-gray-500">R$ 297</s> <strong class="text-green-400 text-xl ml-2">GRÁTIS</strong></div></div>
+      <div class="bg-[#131A22] rounded-2xl p-6 shadow-xl border-t-4 border-yellow-500 card-hover"><i class="fas fa-bullseye text-4xl text-yellow-500 mb-3"></i><h3 class="bonus-card-title text-2xl font-bold mb-2">Técnicas de Prova</h3><p class="bonus-card-text text-gray-400 mb-3">Duas aulas para identificar pegadinhas.</p><div class="bonus-price"><s class="text-gray-500">R$ 197</s> <strong class="text-green-400 text-xl ml-2">GRÁTIS</strong></div></div>
     </div>
     <p class="mt-8 text-xl font-bold bonus-total-mobile">Total em bônus: <span class="text-green-400">R$ 494</span> – você leva de graça!</p>
   </div>
 </section>
 
-<!-- PLANOS (com hover nos cards e título sem linha) -->
+<!-- PLANOS -->
 <section id="planos" class="py-12 md:py-20 bg-[#0A0F1A] scroll-reveal">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="font-bold text-white mb-2 text-3xl md:text-4xl plans-title-mobile">Invista na sua <span class="highlight-text-no-line">aprovação</span></h2>
@@ -457,7 +486,7 @@
   </div>
 </section>
 
-<!-- GARANTIA (texto com tamanho reduzido em mobile) -->
+<!-- GARANTIA -->
 <section class="py-12 md:py-16 bg-[#0D1117] scroll-reveal">
   <div class="max-w-4xl mx-auto px-4">
     <div class="relative bg-gradient-to-br from-[#131A22] to-[#0A0F1A] rounded-2xl p-8 shadow-2xl border border-[#22d3ee]/40 text-center">
@@ -516,7 +545,7 @@
   </div>
 </section>
 
-<!-- FAQ (textos com redução de 3px em mobile) -->
+<!-- FAQ -->
 <section class="py-12 md:py-20 bg-[#0A0F1A] scroll-reveal">
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-10">Dúvidas frequentes</h2>
