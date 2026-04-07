@@ -40,11 +40,14 @@
     .close-modal { float: right; font-size: 1.8rem; cursor: pointer; color: #0fa84a; transition: 0.2s; }
     .close-modal:hover { color: #FF0080; }
     .border-l-0 { border-left-width: 0; }
+    .whatsapp-btn { transition: opacity 0.3s ease; }
+    .whatsapp-btn.scrolled { opacity: 0.6; }
+    .whatsapp-btn.scrolled:hover { opacity: 1; }
   </style>
 </head>
 <body>
 
-<!-- BARRA DE CONTAGEM - CORES #22d3ee -->
+<!-- BARRA DE CONTAGEM -->
 <div class="countdown-bar text-white py-2 text-center text-sm md:text-base font-semibold relative z-30 shadow-md">
   <div class="container mx-auto px-4 flex items-center justify-center gap-3 flex-wrap">
     <i class="fas fa-calendar-alt text-[#22d3ee]"></i>
@@ -58,9 +61,10 @@
 <header class="sticky top-0 z-40 bg-[#0A0F1A]/95 backdrop-blur-sm border-b border-[#0fa84a]/30 shadow-md">
   <div class="w-full px-4 sm:px-6 lg:px-8 py-3">
     <div class="flex justify-between items-center">
-      <!-- LOGO REDUZIDA -->
-      <img src="https://raw.githubusercontent.com/jessicaboth520-png/landingformula/main/Captura%20de%20tela%20de%202026-04-07%2003-52-17.png" alt="Fórmula Revalida" class="h-8 md:h-10 w-auto object-contain" onerror="this.src='https://placehold.co/160x50/15c659/white?text=Fórmula+Revalida'">
-      <a href="#" class="btn-primary px-5 py-2 rounded-xl font-bold text-sm md:text-base shadow-md flex items-center gap-2"><i class="fab fa-whatsapp"></i> Suporte WhatsApp</a>
+      <!-- LOGO REDUZIDA AINDA MAIS -->
+      <img src="https://raw.githubusercontent.com/jessicaboth520-png/landingformula/main/Captura%20de%20tela%20de%202026-04-07%2003-52-17.png" alt="Fórmula Revalida" class="h-6 md:h-8 w-auto object-contain" onerror="this.src='https://placehold.co/160x50/15c659/white?text=Fórmula+Revalida'">
+      <!-- BOTÃO WHATSAPP MENOR E COM OPACIDADE NO SCROLL -->
+      <a href="https://api.whatsapp.com/send/?phone=5555996740468&text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20a%20preparação%20para%20a%20primeira%20fase%20do%20Revalida.&type=phone_number&app_absent=0" target="_blank" class="whatsapp-btn bg-gradient-to-r from-[#0fa84a] to-[#15c659] text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md flex items-center gap-1 hover:shadow-lg transition-all"><i class="fab fa-whatsapp text-sm"></i> Suporte</a>
     </div>
   </div>
 </header>
@@ -71,7 +75,6 @@
   <div class="relative w-full px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
       <div class="space-y-6 animate-fadeInUp">
-        <!-- BADGE COM #22d3ee -->
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium border border-[#22d3ee]/30">
           <i class="fas fa-globe-americas text-[#22d3ee] text-xs"></i>
           <span>Exclusivo para médicos formados no exterior</span>
@@ -91,7 +94,7 @@
       <div class="relative animate-fadeInUp" style="animation-delay: 0.2s;">
         <img src="./Gemini_Generated_Image_nllrk0nllrk0nllr.png" alt="Médica brasileira" class="w-full rounded-2xl object-cover shadow-2xl" loading="lazy">
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-2xl pointer-events-none"></div>
-        <!-- MENTORIA COM DEGRADÊ ROSA E AZUL -->
+        <!-- MENTORIA COM DEGRADÊ ROSA+AZUL E SOMBRA PADRÃO -->
         <div class="absolute -bottom-5 -right-5 bg-gradient-to-r from-[#FF0080] to-[#00D9FF] text-white px-4 py-2 rounded-xl font-bold shadow-lg">
           <i class="fas fa-chalkboard-user mr-1"></i> Mentoria com quem entende
         </div>
@@ -100,7 +103,7 @@
   </div>
 </section>
 
-<!-- REALIDADE (sem alterações de cor solicitadas, apenas ajuste borda) -->
+<!-- REALIDADE -->
 <section class="py-20 bg-[#0D1117]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-10">
@@ -117,13 +120,13 @@
             <div class="flex justify-between p-3 bg-red-500/10 rounded-lg"><span class="font-semibold">Aprovação na primeira tentativa</span><span class="text-2xl font-bold text-red-500">36%</span></div>
           </div>
         </div>
-        <!-- Card com cores #22d3ee e removido border-left-width -->
+        <!-- Card com fundos alterados para #0C1117 sólido -->
         <div class="bg-[#131A22] p-6 rounded-2xl shadow-lg border-l-4 border-[#22d3ee] card-hover border-l-0">
           <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-sync-alt text-[#22d3ee]"></i> O que o Revalida realmente testa</h3>
           <div class="grid md:grid-cols-1 gap-3">
-            <div class="flex items-start gap-3 p-3 bg-[#00D9FF]/10 rounded-lg"><i class="fas fa-check-circle text-[#00D9FF] mt-1"></i><div><strong class="text-white">Prova objetiva 100%</strong><p class="text-gray-400 text-sm">Sem discursivas, mas com pegadinhas clínicas que exigem atenção.</p></div></div>
-            <div class="flex items-start gap-3 p-3 bg-[#FF0080]/10 rounded-lg"><i class="fas fa-check-circle text-[#FF0080] mt-1"></i><div><strong class="text-white">100 questões em 5 horas</strong><p class="text-gray-400 text-sm">Resistência e estratégia são treinadas nos simulados.</p></div></div>
-            <div class="flex items-start gap-3 p-3 bg-[#0fa84a]/10 rounded-lg"><i class="fas fa-check-circle text-[#0fa84a] mt-1"></i><div><strong class="text-white">Raciocínio clínico integrado</strong><p class="text-gray-400 text-sm">Conecte diagnósticos e condutas com nosso banco de questões.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#00D9FF] mt-1"></i><div><strong class="text-white">Prova objetiva 100%</strong><p class="text-gray-400 text-sm">Sem discursivas, mas com pegadinhas clínicas que exigem atenção.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#FF0080] mt-1"></i><div><strong class="text-white">100 questões em 5 horas</strong><p class="text-gray-400 text-sm">Resistência e estratégia são treinadas nos simulados.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-[#0C1117] rounded-lg"><i class="fas fa-check-circle text-[#0fa84a] mt-1"></i><div><strong class="text-white">Raciocínio clínico integrado</strong><p class="text-gray-400 text-sm">Conecte diagnósticos e condutas com nosso banco de questões.</p></div></div>
           </div>
         </div>
         <div class="bg-gradient-to-r from-[#22d3ee]/40 to-[#00D9FF]/40 p-6 rounded-2xl border border-[#22d3ee]/30">
@@ -141,7 +144,7 @@
   </div>
 </section>
 
-<!-- FÓRMULA QUE FUNCIONA - AGORA TOTALMENTE VERDE (sem rosa/azul) -->
+<!-- FÓRMULA QUE FUNCIONA (totalmente verde) -->
 <section class="py-16 bg-[#0A0F1A]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">A <span class="text-[#0fa84a]">fórmula</span> que <span class="text-[#15c659]">funciona</span></h2>
@@ -149,7 +152,6 @@
     <div class="flex justify-center mb-10">
       <div class="relative max-w-2xl w-full">
         <img src="https://cdn.ailandingpage.ai/landingpage_io/user-generate/dc5f80d6-5e1b-4e2d-bfc4-ee421b6f4e39/dc5f80d6-5e1b-4e2d-bfc4-ee421b6f4e39/solution/solution-method-7da5aa04435b42f793d8662fa4f123d3.png" alt="Método comprovado" class="w-full rounded-2xl shadow-xl border border-[#0fa84a]/30">
-        <!-- DEGRADÊ ROSA + AZUL no selo "MÉTODO COMPROVADO" -->
         <div class="absolute top-4 left-4 bg-gradient-to-r from-[#FF0080] to-[#00D9FF] text-white px-4 py-1 rounded-full text-sm font-bold">MÉTODO COMPROVADO</div>
       </div>
     </div>
@@ -157,18 +159,18 @@
       <div class="bg-[#131A22] p-6 rounded-2xl border-l-4 border-[#0fa84a] card-hover text-left">
         <h3 class="text-2xl font-bold mb-4"><i class="fas fa-gem text-[#0fa84a] mr-2"></i> Por que somos diferentes?</h3>
         <div class="space-y-4">
-          <div class="flex gap-3"><i class="fas fa-user-md text-[#0fa84a] text-xl mt-1 animate-float"></i><div><strong>Professores médicos revalidados</strong><p class="text-gray-400">Quem ensina já passou pelo mesmo caminho</p></div></div>
+          <div class="flex gap-3"><i class="fas fa-user-md text-[#00D9FF] text-xl mt-1 animate-float"></i><div><strong>Professores médicos revalidados</strong><p class="text-gray-400">Quem ensina já passou pelo mesmo caminho</p></div></div>
           <div class="flex gap-3"><i class="fab fa-whatsapp text-[#0fa84a] text-xl mt-1 animate-float"></i><div><strong>Contato direto via WhatsApp e Telegram</strong><p class="text-gray-400">Grupo exclusivo – tire dúvidas 24/7</p></div></div>
-          <div class="flex gap-3"><i class="fas fa-video text-[#0fa84a] text-xl mt-1 animate-float"></i><div><strong>3 lives ao vivo por semana</strong><p class="text-gray-400">Terça, quinta e sábado – resolução ao vivo</p></div></div>
+          <div class="flex gap-3"><i class="fas fa-video text-[#FF0080] text-xl mt-1 animate-float"></i><div><strong>3 lives ao vivo por semana</strong><p class="text-gray-400">Terça, quinta e sábado – resolução ao vivo</p></div></div>
         </div>
       </div>
       <div class="bg-[#131A22] p-6 rounded-2xl border-l-4 border-[#0fa84a] card-hover text-left">
         <h3 class="text-2xl font-bold mb-3"><i class="fas fa-bolt text-[#0fa84a] mr-2"></i> Método direto e eficiente</h3>
         <p class="text-gray-300">Esqueça teoria solta. Nossa abordagem é <strong>estudo por questões</strong> com trilha organizada que exige apenas <strong>2 horas por dia</strong>.</p>
         <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-          <div class="bg-[#0A0D14] rounded-xl p-3 shadow-sm"><i class="fas fa-book-open text-2xl text-[#0fa84a] animate-float"></i><div class="font-bold mt-1">Material de apoio</div></div>
+          <div class="bg-[#0A0D14] rounded-xl p-3 shadow-sm"><i class="fas fa-book-open text-2xl text-[#00D9FF] animate-float"></i><div class="font-bold mt-1">Material de apoio</div></div>
           <div class="bg-[#0A0D14] rounded-xl p-3 shadow-sm"><i class="fas fa-clock text-2xl text-[#0fa84a] animate-float"></i><div class="font-bold mt-1">6h/sem aula</div></div>
-          <div class="bg-[#0A0D14] rounded-xl p-3 shadow-sm"><i class="fas fa-headset text-2xl text-[#0fa84a] animate-float"></i><div class="font-bold mt-1">Suporte 24/7</div></div>
+          <div class="bg-[#0A0D14] rounded-xl p-3 shadow-sm"><i class="fas fa-headset text-2xl text-[#FF0080] animate-float"></i><div class="font-bold mt-1">Suporte 24/7</div></div>
         </div>
       </div>
     </div>
@@ -184,7 +186,7 @@
   </div>
 </section>
 
-<!-- CARROSSEL "COMECE AQUI" (cores originais, sem pedido de mudança) -->
+<!-- CARROSSEL "COMECE AQUI" -->
 <section class="py-16 bg-[#0D1117]">
   <div class="container mx-auto px-4">
     <div class="text-center mb-10">
@@ -219,7 +221,7 @@
   </div>
 </section>
 
-<!-- BENEFÍCIOS - ÍCONE ADICIONADO EM "SIMULADOS IDÊNTICOS" -->
+<!-- BENEFÍCIOS -->
 <section class="py-20 bg-[#0A0F1A]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
@@ -232,13 +234,12 @@
       <div class="bg-[#131A22] rounded-2xl p-6 text-center card-hover border border-gray-800"><i class="fas fa-video text-3xl text-[#FF0080] mb-3 animate-float"></i><h3 class="text-xl font-bold mb-2">3 lives por semana</h3><p class="text-gray-400">Terça, quinta e sábado – revisão ao vivo, resolução de questões e tira-dúvidas com os professores.</p></div>
       <div class="bg-[#131A22] rounded-2xl p-6 text-center card-hover border border-gray-800"><i class="fas fa-file-alt text-3xl text-[#00D9FF] mb-3 animate-float"></i><h3 class="text-xl font-bold mb-2">Provas INEP comentadas</h3><p class="text-gray-400">Edições anteriores resolvidas questão por questão, com dicas e macetes.</p></div>
       <div class="bg-[#131A22] rounded-2xl p-6 text-center card-hover border border-gray-800"><i class="fas fa-database text-3xl text-[#0fa84a] mb-3 animate-float"></i><h3 class="text-xl font-bold mb-2">+1.000 questões de residência</h3><p class="text-gray-400">Banco extra para treinar raciocínio clínico e dominar qualquer estilo de questão que apareça na prova.</p></div>
-      <!-- SIMULADOS IDÊNTICOS COM ÍCONE DE GRÁFICO -->
       <div class="bg-[#131A22] rounded-2xl p-6 text-center card-hover border border-gray-800"><i class="fas fa-chart-line text-3xl text-[#FF0080] mb-3 animate-float"></i><h3 class="text-xl font-bold mb-2">Simulados idênticos</h3><p class="text-gray-400">100 questões, tempo cronometrado, correção detalhada e ranking de desempenho para você se preparar como no dia da prova.</p></div>
     </div>
   </div>
 </section>
 
-<!-- BÔNUS (sem alterações) -->
+<!-- BÔNUS -->
 <section class="py-20 bg-[#0D1117]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><i class="fas fa-gift text-[#FF0080] mr-2"></i> Bônus exclusivos</h2>
@@ -251,7 +252,7 @@
   </div>
 </section>
 
-<!-- PLANOS (sem alterações) -->
+<!-- PLANOS -->
 <section id="planos" class="py-20 bg-[#0A0F1A]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Invista na sua <span class="gradient-text">aprovação</span></h2>
@@ -323,7 +324,7 @@
   </div>
 </section>
 
-<!-- FAQ - textos dos summaries em branco -->
+<!-- FAQ -->
 <section class="py-20 bg-[#0A0F1A]">
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-10">Dúvidas frequentes</h2>
@@ -366,6 +367,16 @@
   function closeModalOnBackground(e) { if(e.target===document.getElementById('modal')) closeModal(); }
   function updateCountdown() { const examDate = new Date(2026,5,7); const diff = examDate - new Date(); const days = diff>0?Math.floor(diff/86400000):0; document.getElementById('countdown-days').innerText=days; }
   updateCountdown(); setInterval(updateCountdown,86400000);
+
+  // SCROLL: opacidade do botão WhatsApp
+  const whatsappBtn = document.querySelector('.whatsapp-btn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      whatsappBtn.classList.add('scrolled');
+    } else {
+      whatsappBtn.classList.remove('scrolled');
+    }
+  });
 </script>
 </body>
 </html>
