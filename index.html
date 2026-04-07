@@ -14,63 +14,47 @@
     .animate-float { animation: float 3s ease-in-out infinite; }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     .animate-fadeInUp { animation: fadeInUp 0.6s ease-out forwards; }
-    .gradient-hero { background: linear-gradient(135deg, #001f3f 0%, #003366 50%, #001a2a 100%); }
+    /* Gradiente hero (verde escuro) */
+    .gradient-hero { background: linear-gradient(135deg, #00211d 0%, #00301c 50%, #001a15 100%); }
+    /* Gradiente para texto com efeito de digitação */
     .gradient-text { background: linear-gradient(135deg, #00D9FF, #FF0080); background-clip: text; -webkit-background-clip: text; color: transparent; display: inline-block; }
-    .gradient-pink-blue { background: linear-gradient(135deg, #00D9FF, #FF0080); }
-    .card-hover { transition: all 0.3s ease; }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -15px rgba(0,0,0,0.15); }
-    .btn-green { background: #0a5c2e; color: white; transition: all 0.3s; border: none; }
-    .btn-green:hover { background: #0f7a3e; transform: scale(1.02); box-shadow: 0 0 12px rgba(10,92,46,0.4); }
     .price-grad { background: linear-gradient(135deg, #00D9FF, #FF0080); background-clip: text; -webkit-background-clip: text; color: transparent; font-weight: 800; }
-    .countdown-bar { background: linear-gradient(90deg, #001f3f, #002b4a); border-bottom: 2px solid #00D9FF; }
-    .icon-bg { background: rgba(0,217,255,0.1); border-radius: 1rem; display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem; }
-    .carousel-track { scrollbar-width: thin; scrollbar-color: #00D9FF #e2e8f0; }
+    .btn-green { background: #0a5c2e; color: white; transition: all 0.3s; border: none; }
+    .btn-green:hover { background: #0f7a3e; transform: scale(1.02); }
+    .countdown-bar { background: linear-gradient(90deg, #00211d, #0a5c2e); border-bottom: 2px solid #d4af37; }
+    .icon-bg { background: rgba(10,92,46,0.1); border-radius: 1rem; display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem; }
+    .carousel-track { scrollbar-width: thin; scrollbar-color: #0a5c2e #e2e8f0; }
     .carousel-track::-webkit-scrollbar { height: 6px; }
     .carousel-track::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 10px; }
-    .carousel-track::-webkit-scrollbar-thumb { background: #00D9FF; border-radius: 10px; }
+    .carousel-track::-webkit-scrollbar-thumb { background: #0a5c2e; border-radius: 10px; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
     .modal-content { background: white; max-width: 500px; width: 90%; border-radius: 1.5rem; padding: 2rem; max-height: 80vh; overflow-y: auto; }
     .close-modal { float: right; font-size: 1.5rem; cursor: pointer; color: #0a5c2e; }
-
-    /* Efeito de digitação */
+    /* Efeito de digitação (cursor) */
     .typing {
       display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite;
-      border-right: 2px solid rgba(0,217,255,0.8);
-      padding-right: 4px;
+      position: relative;
     }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+    .typing::after {
+      content: '|';
+      animation: blink 1s step-end infinite;
+      margin-left: 2px;
     }
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: #00D9FF; }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
-    /* Ajuste para telas pequenas: garantir que o texto não quebre */
-    @media (max-width: 640px) {
-      .typing {
-        white-space: normal;
-        animation: none;
-        border-right: none;
-      }
-      /* Ajustes de fonte para celular */
-      .stat-title { font-size: 0.95rem !important; } /* 15px approx */
-      .stat-percent { font-size: 1.25rem !important; } /* 20px */
-      .stat-card-title { font-size: 1.125rem !important; } /* 18px */
-      .inimigo-title { font-size: 1.0625rem !important; } /* 17px */
-      .inimigo-text { font-size: 0.75rem !important; } /* 12px */
-      .objetivo-text { font-size: 1rem !important; }
-      .fonte-normal-card { font-size: 1rem !important; }
+    /* Ajustes de fonte para celular (apenas) */
+    @media (max-width: 768px) {
+      .stat-title { font-size: 0.95rem !important; }
+      .stat-value { font-size: 1.25rem !important; }
+      .enemy-title { font-size: 1.05rem !important; }
+      .enemy-text { font-size: 0.75rem !important; }
+      .card-title-mobile { font-size: 1rem !important; }
+      .card-text-mobile { font-size: 0.85rem !important; }
     }
-    /* Ajustes específicos para os cards de estatísticas e o que o Revalida testa */
-    .stat-card-title { font-size: 1.125rem; } /* 18px base, será reduzido no mobile */
-    .stat-line { font-size: 0.9375rem; } /* 15px base */
-    .stat-percent { font-size: 1.25rem; } /* 20px base */
   </style>
 </head>
 <body>
@@ -78,10 +62,10 @@
 <!-- BARRA DE CONTAGEM -->
 <div class="countdown-bar text-white py-2 text-center text-sm md:text-base font-semibold relative z-30 shadow-md">
   <div class="container mx-auto px-4 flex items-center justify-center gap-3 flex-wrap">
-    <i class="fas fa-calendar-alt text-cyan-400"></i>
-    <span>📢 Edital 2026/1 publicado • Prova em <span id="countdown-days" class="text-cyan-300 text-xl font-bold mx-1">--</span> dias</span>
-    <i class="fas fa-bolt text-cyan-400 animate-pulse"></i>
-    <a href="#planos" class="hidden sm:inline-block bg-gradient-to-r from-cyan-500 to-pink-500 text-white px-4 py-1 rounded-full text-xs font-bold hover:shadow-lg transition">GARANTIR VAGA →</a>
+    <i class="fas fa-calendar-alt text-yellow-400"></i>
+    <span>📢 Edital 2026/1 publicado • Prova em <span id="countdown-days" class="text-yellow-300 text-xl font-bold mx-1">--</span> dias</span>
+    <i class="fas fa-bolt text-yellow-400 animate-pulse"></i>
+    <a href="#planos" class="hidden sm:inline-block bg-yellow-500 text-[#00211d] px-4 py-1 rounded-full text-xs font-bold hover:bg-yellow-400 transition">GARANTIR VAGA →</a>
   </div>
 </div>
 
@@ -89,7 +73,7 @@
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-200">
   <div class="w-full px-4 sm:px-6 lg:px-8 py-3">
     <div class="flex justify-between items-center">
-      <img src="./Captura_de_tela_de_2026-04-07_01-21-45-removebg-preview.png" alt="Fórmula Revalida" class="h-10 md:h-12 w-auto object-contain" onerror="this.src='https://placehold.co/160x50/15c659/white?text=Fórmula+Revalida'">
+      <img src="./Captura_de_tela_de_2026-04-07_01-21-45-removebg-preview.png" alt="Fórmula Revalida" class="h-10 md:h-12 w-auto object-contain">
       <a href="https://wa.me/5511999999999" target="_blank" class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg font-medium transition text-sm shadow-md flex items-center gap-2"><i class="fab fa-whatsapp"></i> Suporte WhatsApp</a>
     </div>
   </div>
@@ -102,25 +86,25 @@
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
       <div class="space-y-6 animate-fadeInUp">
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium">
-          <i class="fas fa-globe-americas text-cyan-400 text-xs"></i>
+          <i class="fas fa-globe-americas text-yellow-400 text-xs"></i>
           <span>Exclusivo para médicos formados no exterior</span>
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">FÓRMULA <span class="gradient-text typing">PRIMEIRA FASE</span> REVALIDA</h1>
-        <p class="text-lg md:text-xl text-gray-200">A assinatura que transforma médicos internacionais em <strong class="text-white">médicos brasileiros</strong> – com CRM, autonomia e reconhecimento.</p>
+        <p class="text-lg md:text-xl text-green-100">A assinatura que transforma médicos internacionais em <strong class="text-white">médicos brasileiros</strong> – com CRM, autonomia e respeito.</p>
         <div class="space-y-3">
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400 text-lg"></i><span>Conquistar o CRM e atender com excelência no Brasil</span></div>
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400 text-lg"></i><span>Construir sua carreira com confiança e preparo</span></div>
-          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400 text-lg"></i><span>Ganhar em reais o que você estudou anos para conquistar</span></div>
+          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-400 text-lg"></i><span>Ter o CRM no bolso e atender como médico de verdade no Brasil</span></div>
+          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-400 text-lg"></i><span>Construir sua carreira com confiança e preparo</span></div>
+          <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-400 text-lg"></i><span>Ganhar em reais o que você estudou anos para conquistar</span></div>
         </div>
         <div class="pt-4">
-          <a href="#planos" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-pink-500 text-white font-bold text-lg px-8 py-4 rounded-xl transition transform hover:scale-105 shadow-xl">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
-          <p class="text-sm text-gray-300 mt-3">✅ 7 dias de garantia incondicional • ✅ Cancele quando quiser</p>
+          <a href="#planos" class="inline-flex items-center gap-2 btn-green text-white font-bold text-lg px-8 py-4 rounded-xl transition transform hover:scale-105 shadow-xl">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
+          <p class="text-sm text-green-200 mt-3">✅ 7 dias de garantia incondicional • ✅ Cancele quando quiser</p>
         </div>
       </div>
       <div class="relative animate-fadeInUp" style="animation-delay: 0.2s;">
         <img src="./Gemini_Generated_Image_nllrk0nllrk0nllr.png" alt="Médica brasileira" class="w-full rounded-2xl object-cover shadow-2xl" loading="lazy">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl pointer-events-none"></div>
-        <div class="absolute -bottom-5 -right-5 bg-gradient-to-r from-cyan-500 to-pink-500 text-white px-4 py-2 rounded-xl font-bold shadow-lg">
+        <div class="absolute -bottom-5 -right-5 bg-green-700 text-white px-4 py-2 rounded-xl font-bold shadow-lg">
           <i class="fas fa-chalkboard-user mr-1"></i> Mentoria com quem entende
         </div>
       </div>
@@ -128,7 +112,7 @@
   </div>
 </section>
 
-<!-- REALIDADE -->
+<!-- REALIDADE (NÚMEROS) -->
 <section class="py-16 bg-gray-50" style="padding-top: 0rem; padding-bottom: 4rem;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
@@ -138,24 +122,24 @@
     <div class="grid lg:grid-cols-2 gap-12 items-start">
       <div class="space-y-6">
         <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-red-500 card-hover">
-          <div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center"><i class="fas fa-chart-line text-red-600 text-xl"></i></div><h3 class="text-xl font-bold stat-card-title">Estatísticas que importam</h3></div>
+          <div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center"><i class="fas fa-chart-line text-red-600 text-xl"></i></div><h3 class="text-xl font-bold">Estatísticas que importam</h3></div>
           <div class="space-y-3">
-            <div class="flex justify-between p-3 bg-red-50 rounded-lg"><span class="font-semibold stat-line">Aprovados na 1ª fase (2025/1)</span><span class="text-2xl font-bold text-red-600 stat-percent">28,23%</span></div>
-            <div class="flex justify-between p-3 bg-red-50 rounded-lg"><span class="font-semibold stat-line">Reprovação geral (1ª ou 2ª etapa)</span><span class="text-2xl font-bold text-red-600 stat-percent">96%</span></div>
-            <div class="flex justify-between p-3 bg-red-50 rounded-lg"><span class="font-semibold stat-line">Aprovação na primeira tentativa</span><span class="text-2xl font-bold text-red-600 stat-percent">36%</span></div>
+            <div class="flex justify-between p-3 bg-red-50 rounded-lg"><span class="stat-title font-semibold">Aprovados na 1ª fase (2025/1)</span><span class="stat-value text-2xl font-bold text-red-600">28,23%</span></div>
+            <div class="flex justify-between p-3 bg-red-50 rounded-lg"><span class="stat-title font-semibold">Reprovação geral (1ª ou 2ª etapa)</span><span class="stat-value text-2xl font-bold text-red-600">96%</span></div>
+            <div class="flex justify-between p-3 bg-red-50 rounded-lg"><span class="stat-title font-semibold">Aprovação na primeira tentativa</span><span class="stat-value text-2xl font-bold text-red-600">36%</span></div>
           </div>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-cyan-500 card-hover">
-          <h3 class="text-xl font-bold mb-4 flex items-center gap-2 stat-card-title"><i class="fas fa-sync-alt text-cyan-500"></i> O que o Revalida realmente testa</h3>
+        <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-600 card-hover">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-sync-alt text-green-600"></i> O que o Revalida realmente testa</h3>
           <div class="grid md:grid-cols-1 gap-3">
-            <div class="flex items-start gap-3 p-3 bg-cyan-50 rounded-lg"><i class="fas fa-check-circle text-cyan-500 mt-1"></i><div><strong class="text-gray-800">Prova objetiva 100%</strong><p class="text-gray-600 text-sm">Sem discursivas, mas com pegadinhas clínicas que exigem atenção.</p></div></div>
-            <div class="flex items-start gap-3 p-3 bg-cyan-50 rounded-lg"><i class="fas fa-check-circle text-cyan-500 mt-1"></i><div><strong class="text-gray-800">100 questões em 5 horas</strong><p class="text-gray-600 text-sm">Resistência e estratégia são treinadas nos simulados.</p></div></div>
-            <div class="flex items-start gap-3 p-3 bg-cyan-50 rounded-lg"><i class="fas fa-check-circle text-cyan-500 mt-1"></i><div><strong class="text-gray-800">Raciocínio clínico integrado</strong><p class="text-gray-600 text-sm">Conecte diagnósticos e condutas com nosso banco de questões comentadas.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg"><i class="fas fa-check-circle text-green-600 mt-1"></i><div><strong>Prova objetiva 100%</strong><p class="text-gray-600 text-sm">Sem discursivas, mas com pegadinhas clínicas que exigem atenção.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg"><i class="fas fa-check-circle text-green-600 mt-1"></i><div><strong>100 questões em 5 horas</strong><p class="text-gray-600 text-sm">Resistência e estratégia são treinadas nos simulados.</p></div></div>
+            <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg"><i class="fas fa-check-circle text-green-600 mt-1"></i><div><strong>Raciocínio clínico integrado</strong><p class="text-gray-600 text-sm">Conecte diagnósticos e condutas com nosso banco de questões comentadas.</p></div></div>
           </div>
         </div>
-        <div class="bg-gradient-to-r from-cyan-900 to-blue-900 text-white p-6 rounded-2xl">
-          <h3 class="text-xl font-bold mb-2 inimigo-title"><i class="fas fa-brain mr-2"></i> Seu maior inimigo não é o conteúdo</h3>
-          <p class="inimigo-text">É o <strong>tempo e a falta de direção</strong>. Você precisa de <strong class="text-yellow-300">método</strong>.</p>
+        <div class="bg-green-700 text-white p-6 rounded-2xl">
+          <h3 class="enemy-title text-xl font-bold mb-2"><i class="fas fa-brain mr-2"></i> Seu maior inimigo não é o conteúdo</h3>
+          <p class="enemy-text text-green-100">É o <strong class="text-white">tempo e a falta de direção</strong>. Você precisa de <strong class="text-yellow-300">método</strong>.</p>
         </div>
       </div>
       <div class="relative">
@@ -171,7 +155,7 @@
 <!-- FÓRMULA QUE FUNCIONA (com imagem método comprovado) -->
 <section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"><span class="gradient-text">A fórmula que funciona</span></h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"><span class="text-green-600">A</span> <span class="text-green-600">fórmula</span> <span class="text-green-600">que</span> <span class="text-green-600">funciona</span></h2>
     <p class="text-gray-600 max-w-2xl mx-auto mb-8">A única assinatura construída por médicos revalidados, com contato direto e estudo por questões.</p>
     <!-- Imagem método comprovado -->
     <div class="flex justify-center mb-10">
@@ -182,7 +166,7 @@
     </div>
     <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
       <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-green-600 card-hover text-left">
-        <h3 class="text-2xl font-bold mb-4 fonte-normal-card"><i class="fas fa-gem text-green-600 mr-2"></i> Por que somos diferentes?</h3>
+        <h3 class="text-2xl font-bold mb-4"><i class="fas fa-gem text-green-600 mr-2"></i> Por que somos diferentes?</h3>
         <div class="space-y-4">
           <div class="flex gap-3"><i class="fas fa-user-md text-green-600 text-xl mt-1"></i><div><strong>Professores médicos revalidados</strong><p class="text-gray-600">Quem ensina já passou pelo mesmo caminho</p></div></div>
           <div class="flex gap-3"><i class="fab fa-whatsapp text-green-600 text-xl mt-1"></i><div><strong>Contato direto via WhatsApp e Telegram</strong><p class="text-gray-600">Grupo exclusivo – tire dúvidas 24/7</p></div></div>
@@ -190,7 +174,7 @@
         </div>
       </div>
       <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-green-600 card-hover text-left">
-        <h3 class="text-2xl font-bold mb-3 fonte-normal-card"><i class="fas fa-bolt text-green-600 mr-2"></i> Método direto e eficiente</h3>
+        <h3 class="text-2xl font-bold mb-3"><i class="fas fa-bolt text-green-600 mr-2"></i> Método direto e eficiente</h3>
         <p class="text-gray-700">Esqueça teoria solta. Nossa abordagem é <strong>estudo por questões</strong> com trilha organizada que exige apenas <strong>2 horas por dia</strong>.</p>
         <div class="grid grid-cols-3 gap-4 mt-6 text-center">
           <div class="bg-white rounded-xl p-3 shadow-sm"><i class="fas fa-book-open text-2xl text-green-600"></i><div class="font-bold mt-1">Material de apoio</div></div>
@@ -199,13 +183,13 @@
         </div>
       </div>
     </div>
-    <div class="bg-gradient-to-r from-cyan-900 to-blue-900 rounded-2xl p-8 text-white shadow-xl">
-      <h3 class="text-2xl md:text-3xl font-bold mb-4 fonte-normal-card">O método que transforma médicos estrangeiros em brasileiros</h3>
-      <p class="text-lg text-gray-200 max-w-2xl mx-auto mb-6">Não é mais um cursinho. É a ponte definitiva.</p>
+    <div class="bg-gradient-to-r from-green-800 to-green-950 rounded-2xl p-8 text-white shadow-xl">
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">O método que transforma médicos estrangeiros em brasileiros</h3>
+      <p class="text-lg text-green-100 max-w-2xl mx-auto mb-6">Não é mais um cursinho. É a ponte definitiva.</p>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fas fa-check-circle text-cyan-400 text-3xl mb-2"></i><div class="font-bold text-2xl">1000+</div><div>Questões comentadas</div></div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fas fa-chalkboard-user text-cyan-400 text-3xl mb-2"></i><div class="font-bold text-2xl">6h/sem</div><div>Aulas ao vivo</div></div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fab fa-whatsapp text-cyan-400 text-3xl mb-2"></i><div class="font-bold text-2xl">24/7</div><div>Grupos WhatsApp + Telegram</div></div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fas fa-check-circle text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">1000+</div><div>Questões comentadas</div></div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fas fa-chalkboard-user text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">6h/sem</div><div>Aulas ao vivo</div></div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4"><i class="fab fa-whatsapp text-yellow-400 text-3xl mb-2"></i><div class="font-bold text-2xl">24/7</div><div>Grupos WhatsApp + Telegram</div></div>
       </div>
     </div>
   </div>
@@ -220,23 +204,23 @@
     </div>
     <div class="carousel-container relative pb-4">
       <div class="carousel-track flex gap-4 overflow-x-auto w-full pb-4 no-scrollbar cursor-grab active:cursor-grabbing scroll-smooth">
-        <div class="carousel-item min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden border border-cyan-300 hover:border-cyan-500 transition-all shadow-xl bg-white p-4 text-center cursor-pointer" onclick="openModal('destrinchando')">
-          <div class="icon-bg mx-auto w-16 h-16 mb-3"><i class="fas fa-play-circle text-3xl text-cyan-500"></i></div>
+        <div class="carousel-item min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden border border-green-300 hover:border-green-600 transition-all shadow-xl bg-white p-4 text-center cursor-pointer" onclick="openModal('destrinchando')">
+          <div class="icon-bg w-16 h-16 mx-auto mb-3"><i class="fas fa-play-circle text-2xl text-green-600"></i></div>
           <h3 class="font-bold text-gray-800">Destrinchando a prova</h3>
           <p class="text-sm text-gray-500">Análise completa da estrutura</p>
         </div>
-        <div class="carousel-item min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden border border-cyan-300 hover:border-cyan-500 transition-all shadow-xl bg-white p-4 text-center cursor-pointer" onclick="openModal('checklist')">
-          <div class="icon-bg mx-auto w-16 h-16 mb-3"><i class="fas fa-list-check text-3xl text-cyan-500"></i></div>
+        <div class="carousel-item min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden border border-green-300 hover:border-green-600 transition-all shadow-xl bg-white p-4 text-center cursor-pointer" onclick="openModal('checklist')">
+          <div class="icon-bg w-16 h-16 mx-auto mb-3"><i class="fas fa-list-check text-2xl text-green-600"></i></div>
           <h3 class="font-bold text-gray-800">Checklist secreta</h3>
           <p class="text-sm text-gray-500">Roteiros por estação</p>
         </div>
-        <div class="carousel-item min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden border border-cyan-300 hover:border-cyan-500 transition-all shadow-xl bg-white p-4 text-center cursor-pointer" onclick="openModal('simulacoes')">
-          <div class="icon-bg mx-auto w-16 h-16 mb-3"><i class="fas fa-video text-3xl text-cyan-500"></i></div>
+        <div class="carousel-item min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden border border-green-300 hover:border-green-600 transition-all shadow-xl bg-white p-4 text-center cursor-pointer" onclick="openModal('simulacoes')">
+          <div class="icon-bg w-16 h-16 mx-auto mb-3"><i class="fas fa-video text-2xl text-green-600"></i></div>
           <h3 class="font-bold text-gray-800">Simulações reais</h3>
           <p class="text-sm text-gray-500">Correção item por item</p>
         </div>
-        <div class="carousel-item min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden border border-cyan-300 hover:border-cyan-500 transition-all shadow-xl bg-white p-4 text-center cursor-pointer" onclick="openModal('raciocinio')">
-          <div class="icon-bg mx-auto w-16 h-16 mb-3"><i class="fas fa-brain text-3xl text-cyan-500"></i></div>
+        <div class="carousel-item min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden border border-green-300 hover:border-green-600 transition-all shadow-xl bg-white p-4 text-center cursor-pointer" onclick="openModal('raciocinio')">
+          <div class="icon-bg w-16 h-16 mx-auto mb-3"><i class="fas fa-brain text-2xl text-green-600"></i></div>
           <h3 class="font-bold text-gray-800">Raciocínio clínico</h3>
           <p class="text-sm text-gray-500">Aulas por motivo de consulta</p>
         </div>
@@ -296,8 +280,8 @@
         </ul>
       </div>
       <!-- Trimestral (destaque) -->
-      <div class="bg-gray-50 rounded-2xl p-6 shadow-xl border-2 border-cyan-400 relative flex flex-col card-hover transform md:-translate-y-2">
-        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full">MAIS ESCOLHIDO</div>
+      <div class="bg-gray-50 rounded-2xl p-6 shadow-xl border-2 border-green-600 relative flex flex-col card-hover transform md:-translate-y-2">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">MAIS ESCOLHIDO</div>
         <h3 class="text-2xl font-bold mt-4">Trimestral</h3>
         <div class="my-4"><span class="text-5xl font-bold price-grad">R$ 497</span></div>
         <p class="text-green-600 text-sm -mt-2 mb-2">Economia de R$ 94</p>
@@ -332,7 +316,7 @@
 <section class="py-16 bg-gray-50">
   <div class="max-w-4xl mx-auto px-4 text-center">
     <div class="bg-white rounded-2xl p-8 shadow-md border border-gray-200">
-      <i class="fas fa-shield-alt text-4xl text-cyan-500 mb-3"></i>
+      <i class="fas fa-shield-alt text-4xl text-green-600 mb-3"></i>
       <h2 class="text-2xl font-bold mb-2">Garantia incondicional – risco zero</h2>
       <p class="text-gray-700">Você tem <strong>7 dias para testar</strong> todo o conteúdo. Se não se adaptar, devolvemos <strong>100% do seu dinheiro</strong>, sem perguntas.</p>
     </div>
@@ -346,7 +330,7 @@
       <p class="mt-4 font-semibold"><i class="fas fa-calendar-alt mr-2"></i> A prova de 2026/1 está marcada para <strong>7 de junho</strong>. As inscrições vão de 6 a 10 de abril.</p>
     </div>
     <div class="mt-10">
-      <a href="#" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-pink-500 text-white text-xl px-8 py-4 rounded-xl font-bold transition hover:scale-105 shadow-xl">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
+      <a href="#" class="inline-flex items-center gap-2 btn-green text-white text-xl px-8 py-4 rounded-xl font-bold transition hover:scale-105 shadow-xl">QUERO COMEÇAR AGORA <i class="fas fa-arrow-right"></i></a>
       <p class="mt-4 text-gray-600"><i class="fas fa-check-circle text-green-600 mr-1"></i> Acesso imediato. Hoje você já assiste à primeira aula.</p>
     </div>
   </div>
@@ -370,7 +354,7 @@
 <footer class="bg-gray-900 text-white py-8 text-center">
   <p>Fórmula Primeira Fase Revalida – Assinatura mensal. Cancele quando quiser. 7 dias de garantia incondicional.</p>
   <div class="flex justify-center gap-6 mt-4">
-    <a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" class="text-white hover:text-cyan-400 transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/SEU_INSTAGRAM" target="_blank" class="text-white hover:text-green-400 transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
   </div>
   <p class="text-sm text-gray-400 mt-4">© 2026 • Desenvolvido para médicos formados no exterior que buscam a aprovação no Revalida.</p>
 </footer>
